@@ -1,0 +1,145 @@
+
+.font-awesome(@c:white, @p, @content){
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: @c;
+  padding: @p;
+  content: @content;
+}
+
+.display-flex-row(@j-c:center, @a-i:stretch, @a-c:stretch){
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: @j-c;
+  align-items: @a-i;
+  align-content: @a-c;
+}
+
+.hidden{
+  display: none;
+}
+
+.wpcf7-textarea{
+  width: 268px;
+}
+
+.account{
+  &::after {
+    .font-awesome(white, 0 0 0 .4em, "\f53d");
+  }
+}
+
+body{
+  margin: 0;
+  color: #fff;
+}
+
+h1,h2,h3,h4{
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+
+  &.map{
+    font-style: italic;
+    
+    &::after{
+      font-style: normal;
+      .font-awesome(white, 0 0 0 .4em, "\f3c5");
+    }
+  }
+
+  &.tel{
+    font-style: italic;
+
+    &::after{
+      font-style: normal;
+      .font-awesome(white, 0 0 0 .4em, "\f095");
+    }
+  }
+
+  &.email{
+    font-style: italic;
+
+    &::after{
+      font-style: normal;
+      .font-awesome(white, 0 0 0 .4em, "\f0e0");
+    }
+  }
+
+  &.external{
+    &::after{
+      .font-awesome(white, 0 0 0 .4em, "\f35d");
+    }
+  }
+
+  &.today{
+    font-weight: 800;
+
+    &::before{
+      .font-awesome(red, 0 .3em 0 0, "\f0da");
+    }
+    &::after{
+      .font-awesome(red, 0 0 0 .3em, "\f0d9");
+    }
+  }
+
+  &.smooth-scroll-down{
+    &::before{
+      .font-awesome(white, 0 .4em 0 0, "\f0d7");
+    }
+    &::after{
+      .font-awesome(white, 0 0 0 .4em, "\f0d7");
+    }
+  }
+
+  &.smooth-scroll-up{
+    &::before{
+      .font-awesome(white, 0 .4em 0 0, "\f0d8")
+    }
+    &::after{
+      .font-awesome(white, 0 0 0 .4em, "\f0d8")
+    }
+  }
+}
+
+ul{
+  padding: 0;
+  list-style-type: none;
+
+  &.submenu{
+    display: none;
+  }
+
+  li{
+    &.list{
+      cursor: pointer;
+
+      &::after{
+        .font-awesome(white, 0 0 0 .4em, "\f0d7");
+        }
+    }
+  }
+}
+
+footer{
+  background-color: #191919;
+  color: white;
+  .display-flex-row();
+
+  & div{
+    margin: 0 2em;
+
+    & dl{
+      & dt{
+        margin: .5em 0;
+      }
+
+      & dd{
+        margin-bottom: 0.3em;
+      }
+    }
+  }
+}

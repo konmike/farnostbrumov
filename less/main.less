@@ -1,0 +1,169 @@
+@img: "http://farbru.cekuj.net/wp-content/uploads";
+
+.display-flex-row(@wrap:wrap, @j-c:center, @a-i:stretch, @a-c:stretch){
+  display: flex;
+  flex-direction: row;
+  flex-wrap: @wrap;
+  justify-content: @j-c;
+  align-items: @a-i;
+  align-content: @a-c;
+}
+
+.display-flex-column(@j-c, @a-i:stretch, @a-c:stretch){
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: @j-c;
+  align-items: @a-i;
+  align-content: @a-c;
+}
+
+article{
+  &.intro{
+    background-image: url("@{img}/2019/02/fullkostel.jpg");
+    background-color: #191919;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .display-flex-column(space-between);
+    width: 100%;
+    height: 100vh;
+
+    & header{
+      text-transform: uppercase;
+      font-size: 2em;
+      text-align: center;
+    }
+
+    & footer{
+      .display-flex-row(wrap, center, center);
+      background-color: transparent;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-family: Helvetica, Arial, sans-serif;
+      padding: 1em 0;
+
+      & ul{
+        padding: 0 1.5em;
+        margin: 0 1.5em;
+        border-right: 0.1em white solid;
+        border-left: 0.1em white solid;
+        line-height: 1.7em;
+      }
+    }
+  }
+
+  &.news,&.contact{
+    color: #000;
+
+    & a{
+      color: #000;
+    }
+  }
+
+  &.news{
+    background-color: rgba(230, 230, 230, 0.9);
+    height: 100vh;
+    .display-flex-row(wrap, center, stretch, flex-start);
+
+    & section {
+      &:first-child{
+        max-width: 70%;
+        width: 70%;
+        .display-flex-column(flex-start,center);
+      }
+
+      &:last-child{
+        max-width: 30%;
+        width: 30%;
+      }
+
+      & h3,h4{
+        text-transform: uppercase;
+      }
+      & h3{
+        text-align: center;
+      }
+
+      & ul {
+        line-height: 1.5em;
+      }
+
+      & div {
+        border-left: 0.05em solid black;
+        padding-left: 1em;
+      }
+    }
+  }
+
+  &.contact{
+    height: auto;
+    background-color: rgba(230, 230, 230, 0.4);
+    .display-flex-column(center,stretch,flex-start);
+
+    & h2{
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    & section{
+      .display-flex-row();
+      margin: 0.5em 0 0.5em 0;
+
+      & div{
+        .display-flex-column(flex-start, center);
+        margin: 0 2em;
+
+        & h3{
+          margin-bottom: 0;
+        }
+
+        & h4{
+          margin-top: 0.8em;
+        }
+
+        & img{
+          border-radius: 5em;
+        }
+
+        & dl{
+          display: flex;
+          font-weight: 800;
+
+          & dd{
+            margin-left: 1em;
+
+            & a{
+              &.tel{
+                &::after{
+                  font-style: normal;
+                  color: black;
+                }
+              }
+            }
+          }
+        }
+
+        &.wpcf7-display-none{
+          display: none;
+        }
+
+      }
+    }
+  }
+}
+
+nav{
+  font-weight: 800;
+  font-family: Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+
+  & ul{
+    .display-flex-row(nowrap);
+    margin: 0;
+    padding-top: 1em;
+
+    & li{
+      margin: 0 .5em;
+    }
+  }
+}
