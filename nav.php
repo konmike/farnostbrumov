@@ -1,8 +1,8 @@
 <?php
 echo '
-	<nav>
+	<nav id="menu" class="menu-fixed">
 		<ul>
-			<li><a href="" class="smooth-scroll-up hidden">Domů</a></li>
+			<li><a href="#home" class="tlacitko smooth-scroll-up list-hidden">Domů</a></li>
 			<li class="list" id="farnost">Farnost</li>
 			<li>Bohoslužby</li>
 			<li>Farní oznamy</li>
@@ -10,10 +10,10 @@ echo '
 			<li class="list" id="zivotfarnosti">
 			                    Život farnosti
 			                          </li>
-			<li><a href="" class="hidden smooth-scroll-down">Kontakt</a></li>
+			<li><a href="#contact" class="tlacitko list-hidden smooth-scroll-down">Kontakt</a></li>
 		</ul>
 	
-		<ul class="submenu" id="submenu-f">
+		<ul class="submenu" id="submenu_f">
 			<li class="close" id="close_f"></li>
 			<li>Historie kostela</li>
 			<li>Kronika farnosti</li>
@@ -22,7 +22,7 @@ echo '
 			<li>Katolická média</li>
 		</ul>
 	
-		<ul class="submenu" id="submenu-zf">
+		<ul class="submenu" id="submenu_zf">
 			<li class="close" id="close_zf"></li>
 			<li>Výuka náboženství</li>
 			<li>Společenství</li>

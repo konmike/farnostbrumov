@@ -140,6 +140,26 @@ nav {
   font-family: Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
+nav.menu-fixed {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+}
+nav.menu-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #191919;
+  color: white;
+  z-index: 9999;
+}
 nav ul {
   display: flex;
   flex-direction: row;
@@ -148,7 +168,27 @@ nav ul {
   align-items: stretch;
   align-content: stretch;
   margin: 0;
-  padding-top: 1em;
+  padding: 1em 0;
+}
+nav ul.submenu {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: stretch;
+  line-height: 1.5em;
+  background-color: #191919;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  padding: 3em 1em;
+  margin: 0;
+  transition: all 0.5s;
+  box-sizing: border-box;
+  box-shadow: -10px 2px 10px 0 rgba(0, 0, 0, 0.6);
 }
 nav ul li {
   margin: 0 0.5em;

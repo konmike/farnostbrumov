@@ -15,7 +15,13 @@
   align-content: @a-c;
 }
 
-.hidden{
+.position-absolute(@t,@l){
+  position: absolute;
+  top: @t;
+  left: @l;
+}
+
+.hidden, .list-hidden{
   display: none;
 }
 
@@ -109,10 +115,6 @@ ul{
   padding: 0;
   list-style-type: none;
 
-  &.submenu{
-    display: none;
-  }
-
   li{
     &.list{
       cursor: pointer;
@@ -120,6 +122,24 @@ ul{
       &::after{
         .font-awesome(white, 0 0 0 .4em, "\f0d7");
         }
+    }
+
+    &.close{
+      font-size: 1.5em;
+      .position-absolute(.5em,0);
+      cursor: pointer;
+
+      &:hover{
+        color: red;
+
+        &::after{
+          .font-awesome(red, 0, "\f101");
+        }
+      }
+
+      &::after{
+        .font-awesome(white, 0, "\f00d");
+      }
     }
   }
 }

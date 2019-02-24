@@ -15,6 +15,8 @@ function themeslug_enqueue_script() {
 	//wp_enqueue_script( 'pluginLoader', get_stylesheet_directory_uri() . '/js/queryloader2.min.js', false );
 	//wp_enqueue_script( 'pluginFlikcity', get_stylesheet_directory_uri() . '/js/flickity.pkgd.min.js', false );
 
+	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.0', true );
+
 	wp_enqueue_style( 'default', get_stylesheet_directory_uri() . '/css/default.css', false );
 	wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/css/main.css', false );
 	//wp_enqueue_style( 'flikcity', get_stylesheet_directory_uri() . '/css/flickity.css', false );

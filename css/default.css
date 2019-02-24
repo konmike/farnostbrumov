@@ -1,4 +1,5 @@
-.hidden {
+.hidden,
+.list-hidden {
   display: none;
 }
 .wpcf7-textarea {
@@ -114,9 +115,6 @@ ul {
   padding: 0;
   list-style-type: none;
 }
-ul.submenu {
-  display: none;
-}
 ul li.list {
   cursor: pointer;
 }
@@ -126,6 +124,30 @@ ul li.list::after {
   color: white;
   padding: 0 0 0 0.4em;
   content: "\f0d7";
+}
+ul li.close {
+  font-size: 1.5em;
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  cursor: pointer;
+}
+ul li.close:hover {
+  color: red;
+}
+ul li.close:hover::after {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: red;
+  padding: 0;
+  content: "\f101";
+}
+ul li.close::after {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: white;
+  padding: 0;
+  content: "\f00d";
 }
 footer {
   background-color: #191919;
