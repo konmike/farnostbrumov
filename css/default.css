@@ -1,5 +1,7 @@
 .hidden,
-.list-hidden {
+.list-hidden,
+#menu-item-56,
+#menu-item-78 {
   display: none;
 }
 .wpcf7-textarea {
@@ -11,6 +13,10 @@
   color: white;
   padding: 0 0 0 0.4em;
   content: "\f53d";
+}
+html,
+body {
+  transition: all 0.5s;
 }
 body {
   margin: 0;
@@ -115,39 +121,15 @@ ul {
   padding: 0;
   list-style-type: none;
 }
-ul li.list {
+ul li.menu-item-has-children {
   cursor: pointer;
 }
-ul li.list::after {
+ul li.menu-item-has-children::after {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
   padding: 0 0 0 0.4em;
   content: "\f0d7";
-}
-ul li.close {
-  font-size: 1.5em;
-  position: absolute;
-  top: 0.5em;
-  left: 0;
-  cursor: pointer;
-}
-ul li.close:hover {
-  color: red;
-}
-ul li.close:hover::after {
-  font-family: "Font Awesome 5 Free", serif;
-  font-weight: 900;
-  color: red;
-  padding: 0;
-  content: "\f101";
-}
-ul li.close::after {
-  font-family: "Font Awesome 5 Free", serif;
-  font-weight: 900;
-  color: white;
-  padding: 0;
-  content: "\f00d";
 }
 footer {
   background-color: #191919;

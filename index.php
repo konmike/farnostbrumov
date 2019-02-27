@@ -1,10 +1,13 @@
 <?php get_header(); ?>
     <main>
         <article id="home" class="intro">
-            <?php include 'nav.php'; ?>
+	        <?php wp_nav_menu(  array( 'theme_location' => 'primary-menu',
+                                       'container' => 'nav',
+                                       'container_class' => 'menu-fixed',
+                                       'container_id' => 'menu'));  ?>
 
             <header>
-                <h1>Farnost sv. Václava</h1>
+                <h1>Farnost sv.&nbsp;Václava</h1>
                 <h3>Brumov-Bylnice</h3>
             </header>
 

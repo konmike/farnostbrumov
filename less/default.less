@@ -21,7 +21,7 @@
   left: @l;
 }
 
-.hidden, .list-hidden{
+.hidden, .list-hidden, #menu-item-56, #menu-item-78{
   display: none;
 }
 
@@ -34,7 +34,9 @@
     .font-awesome(white, 0 0 0 .4em, "\f53d");
   }
 }
-
+html,body{
+  transition: all 0.5s;
+}
 body{
   margin: 0;
   color: #fff;
@@ -116,30 +118,12 @@ ul{
   list-style-type: none;
 
   li{
-    &.list{
+    &.menu-item-has-children{
       cursor: pointer;
 
       &::after{
         .font-awesome(white, 0 0 0 .4em, "\f0d7");
         }
-    }
-
-    &.close{
-      font-size: 1.5em;
-      .position-absolute(.5em,0);
-      cursor: pointer;
-
-      &:hover{
-        color: red;
-
-        &::after{
-          .font-awesome(red, 0, "\f101");
-        }
-      }
-
-      &::after{
-        .font-awesome(white, 0, "\f00d");
-      }
     }
   }
 }

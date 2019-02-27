@@ -1,7 +1,8 @@
 <?php
 echo '
 	<nav id="menu" class="menu-fixed">
-		<ul>
+		<ul id="menu_ul">
+			<li class="hamburger-menu-button"></li>
 			<li><a href="#home" class="tlacitko smooth-scroll-up list-hidden">Domů</a></li>
 			<li class="list" id="farnost">Farnost</li>
 			<li>Bohoslužby</li>

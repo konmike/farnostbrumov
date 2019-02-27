@@ -1,5 +1,13 @@
 @img: "http://farbru.cekuj.net/wp-content/uploads";
 
+.font-awesome(@c:white, @p, @content){
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: @c;
+  padding: @p;
+  content: @content;
+}
+
 .display-flex-row(@wrap:wrap, @j-c:center, @a-i:stretch, @a-c:stretch){
   display: flex;
   flex-direction: row;
@@ -17,10 +25,16 @@
   align-content: @a-c;
 }
 
-.position-absolute(@t,@r) {
+.position-absolute-tr(@t,@r) {
   position: absolute;
   top: @t;
   right: @r;
+}
+
+.position-absolute-tl(@t,@l) {
+  position: absolute;
+  top: @t;
+  left: @l;
 }
 
 .position-fixed(@t,@l) {
@@ -28,6 +42,10 @@
   top: @t;
   left: @l;
 }
+
+@desktop:   ~"only screen and (min-width: 960px) and (max-width: 1199px)";
+@tablet:    ~"only screen and (min-width: 730px) and (max-width: 959px)";
+@mobile:    ~"only screen and (max-width: 729px)";
 
 article{
   &.intro{
@@ -38,12 +56,29 @@ article{
     background-position: center;
     .display-flex-column(space-between);
     width: 100%;
+    max-width: 100%;
     height: 100vh;
+
+    @media @mobile{
+      background-image: none;
+      background-color: white;
+      justify-content: space-evenly;
+    }
 
     & header{
       text-transform: uppercase;
       font-size: 2em;
       text-align: center;
+
+      @media @mobile{
+        background-image: url("@{img}/2019/02/fullkostel.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #191919;
+        font-size: 1.5em;
+        margin-top: 1em;
+      }
     }
 
     & footer{
@@ -54,12 +89,39 @@ article{
       font-family: Helvetica, Arial, sans-serif;
       padding: 1em 0;
 
+      @media @mobile{
+        .display-flex-column(center, center);
+
+        a{
+          color: black;
+
+          &::after,&::before{
+            color: #191919;
+          }
+
+          &.today{
+            &::after,&::before{
+              color: red;
+            }
+          }
+        }
+      }
+
       & ul{
         padding: 0 1.5em;
         margin: 0 1.5em;
         border-right: 0.1em white solid;
         border-left: 0.1em white solid;
         line-height: 1.7em;
+
+        @media @mobile{
+          padding: 1em 0;
+          margin: 1em 0;
+          border-top: 0.09em #191919 solid;
+          border-bottom: 0.09em #191919 solid;
+          border-right: none;
+          border-left: none;
+        }
       }
     }
   }
@@ -164,13 +226,20 @@ article{
   }
 }
 
+/*
 nav{
-  font-weight: 800;
-  font-family: Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
+  max-width: 100%;
 
   &.menu-fixed{
     .display-flex-row(nowrap);
+
+    @media @mobile{
+      .position-fixed(0,0);
+      background-color: #191919;
+      width: 100%;
+      max-width: 100%;
+      z-index: 1;
+    }
   }
 
   &.menu-scroll{
@@ -182,12 +251,41 @@ nav{
     background-color: #191919;
     color: white;
     z-index: 9999;
+
+    @media @mobile{
+      display: none;
+    }
   }
 
   & ul{
     .display-flex-row(nowrap);
     margin: 0;
     padding: 1em 0;
+    font-weight: 800;
+    font-family: Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    max-width: 100%;
+
+    &.hamburger-menu{
+      .display-flex-column(flex-start);
+      height: 100vh;
+      max-height: 100vh;
+      width: 100%;
+      max-width: 100%;
+      padding: 3em 1em;
+      background-color: #232222;
+
+      & li{
+        display: block;
+        margin: 0;
+        padding-left: 1em;
+        line-height: 2em;
+      }
+    }
+
+    @media @mobile{
+      margin: 1em 0;
+    }
 
     &.submenu{
       .display-flex-column(flex-start,flex-start);
@@ -195,17 +293,84 @@ nav{
       background-color: #191919;
       opacity: 0;
       z-index: -1;
-      .position-absolute(0,0);
+      .position-absolute-tr(0,0);
       height: 100vh;
       padding: 3em 1em;
       margin: 0;
-      transition: all 0.5s;
       box-sizing: border-box;
       box-shadow: -10px 2px 10px 0 rgba(0,0,0,.6);
+
+      @media @mobile{
+        width: 100%;
+        max-width: 100%;
+        background-color: #232222;
+
+        & li{
+          display: block;
+
+          &.close {
+            .position-absolute-tl(0, 0);
+            cursor: pointer;
+            background-color: #191919;
+
+            &::after{
+              font-size: 2em;
+            }
+          }
+        }
+      }
     }
 
     & li{
       margin: 0 .5em;
+      display: block;
+
+      &.close{
+        .position-absolute-tl(.5em,0);
+        cursor: pointer;
+
+        &:hover{
+          color: red;
+
+          &::after{
+            .font-awesome(red, 0, "\f101");
+          }
+        }
+
+        &::after{
+          font-size: 1.5em;
+          .font-awesome(white, 0, "\f00d");
+        }
+      }
+
+      @media @mobile{
+        display: none;
+        margin: 1em;
+      }
+
+      &.hamburger-menu-button, &.hamburger-menu-button-close{
+        display: none;
+        width: 100%;
+        max-width: 100%;
+        line-height: normal;
+        background-color: #191919;
+
+        @media @mobile{
+          display: block;
+          padding: 1em;
+
+          &::after{
+            .font-awesome(white, 0, "\f0c9");
+            font-size: 2em;
+          }
+        }
+      }
+
+      &.hamburger-menu-button-close{
+          &::after{
+            .font-awesome(white, 0, "\f00d");
+          }
+      }
     }
   }
-}
+} */
