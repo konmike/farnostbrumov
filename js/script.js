@@ -1,12 +1,20 @@
 (function($) {
 
+    $(document).ready(function(){
+        $('.menu-item-56 > a').addClass('tlacitko');
+        $('.menu-item-78 > a').addClass('tlacitko');
+    });
+
     $(window).scroll(function(){
-        if ($(this).scrollTop() > 0 && $(window).width() >= 730) {
+        if ( ($(this).scrollTop() > 0) && ($(window).width() >= 730) ) {
             $('#menu').removeClass('menu-fixed').addClass('menu-scroll').fadeIn(1000);
-            $('.sub-menu').css({'opacity' : '0', 'z-index' : '-1'});
-            $('.menu-item-56').css('display', 'block');
-            $('.menu-item-78').css('display', 'block');
+            $('.sub-menu').css({'display' : 'none'});
+            $('.menu-item-56').css('display', 'flex');
+            $('.menu-item-78').css('display', 'flex');
             $('.menu-item-has-children').addClass('hidden');
+        } else if( ($(this).scrollTop() >= 0) && ($(window).width() < 730) && (!$('#menu-menu').hasClass('hamburger-menu'))) {
+            $('.menu-item-56').css('display', 'flex');
+            $('.menu-item-78').css('display', 'flex');
         } else {
             $('#menu').removeClass('menu-scroll').addClass('menu-fixed').fadeIn(1000);
             $('.menu-item-has-children').removeClass('hidden');
@@ -15,7 +23,7 @@
         }
     });
 
-    $('a.tlacitko').on('click', function(e) {
+    $('a.tlacitko').click(function(e) {
         let cil = $(this).attr('href');
         let menu = $('#menu');
         let rychlost = 1000;
@@ -27,72 +35,30 @@
         e.preventDefault();
     });
 
-    $('li.menu-item-80').on('click', function() {
-        if($('#menu-menu').hasClass('hamburger-menu')){
-            $('li.menu-item-80').removeClass('hamburger-menu-button-close');
-            $('#menu-menu').removeClass('hamburger-menu');
-            $('.list-hidden').css('display', 'none');
-        }else{
-            $('.list-hidden').css('display', 'block');
-            $('li.menu-item-80').addClass('hamburger-menu-button-close');
-            $('#menu-menu').addClass('hamburger-menu');
-        }
+    $('li.menu-item-80').click(function() {
+            $('#menu-menu > li:first-child').toggleClass('hamburger-menu-button-close');
+            $('#menu-menu').toggleClass('hamburger-menu');
+            if(!$('#menu-menu').hasClass('hamburger-menu')){
+                $('.menu-item-56').css('display', 'flex');
+                $('.menu-item-78').css('display', 'flex');
+            }else{
+                $('.menu-item-56').css('display', 'none');
+                $('.menu-item-78').css('display', 'none');
+            }
     });
 
-    /*$('ul li > .sub-menu').parent().click(function() {
-        var submenu = $(this).children('.sub-menu');
-        if ( $(submenu).is(':hidden') ) {
-            $(submenu).slideDown(200);
-        } else {
-            $(submenu).slideUp(200);
-        }
-    });*/
-
-
-    $('li > ul.sub-menu').parent().click(function() {
-        showSubMenu($(this).children('ul.sub-menu'));
+    $('#menu-menu li.menu-item-has-children > a').click(function(e){
+        e.preventDefault();
+        $('ul.sub-menu').not($(this).parents()).slideUp(200);
+        $(this).siblings('.sub-menu').slideToggle('slow');
+        e.stopPropagation();
     });
 
-    $('ul.sub-menu > li:first-child').children().click(function() {
-        hideSubMenu($(this).parent('ul.sub-menu'));
+
+    $('.sub-menu li:first-child').click(function(){
+        event.preventDefault();
+        $(this).parents('.sub-menu').first().slideToggle('fast');
+
     });
-
-    /*
-    $('#menu-item-74').on('click', function() {
-        showSubMenu($('#menu-item-74  > ul.sub-menu'));
-    });
-
-    $('#menu-item-75').on('click', function() {
-        showSubMenu($('#menu-item-75  > ul.sub-menu'));
-    });
-
-    $('#menu-item-76').on('click', function() {
-        showSubMenu($('#menu-item-76  > ul.sub-menu'));
-    });
-
-    $('#menu-item-77').on('click', function() {
-        showSubMenu($('#menu-item-77  > ul.sub-menu'));
-    });
-    
-
-    $('#menu-item-82').on('click', function() {
-        hideSubMenu();
-    });
-
-    $('#menu-item-83').on('click', function() {
-        hideSubMenu();
-    });
-
-    $('#menu-item-84').on('click', function() {
-        hideSubMenu();
-    }); */
-
-    function showSubMenu($param) {
-            $param.css({'opacity':'1', 'z-index':'1'});
-    }
-
-    function hideSubMenu(){
-        $('.sub-menu').css({'opacity' : '0', 'z-index' : '-1'});
-    }
 
 })( jQuery );

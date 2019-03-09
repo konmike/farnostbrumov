@@ -1,7 +1,7 @@
 nav {
   max-width: 100%;
 }
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 45.563em), only screen and (max-width: 25em) {
   nav.menu-fixed {
     position: fixed;
     top: 0;
@@ -24,7 +24,7 @@ nav.menu-scroll {
   color: white;
   z-index: 9999;
 }
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 45.563em) {
   nav.menu-scroll {
     display: none;
   }
@@ -37,23 +37,23 @@ nav ul.menu {
   align-items: stretch;
   align-content: stretch;
   margin: 0;
-  padding: 1em 0;
+  padding: 1rem 0;
   font-weight: 800;
   font-family: Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   max-width: 100%;
 }
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 45.563em) {
   nav ul.menu {
     padding: 0;
   }
 }
 nav ul.menu li {
-  margin: 0 0.5em;
+  margin: 0 0.5rem;
   display: block;
   /*Hamburger-menu-button */
 }
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 45.563em) {
   nav ul.menu li {
     display: none;
   }
@@ -61,39 +61,108 @@ nav ul.menu li {
 nav ul.menu li.hidden {
   display: none;
 }
-nav ul.menu li.menu-item-80 {
+nav ul.menu li:first-child {
   display: none;
   width: 100%;
   max-width: 100%;
   line-height: normal;
   background-color: #191919;
+  cursor: pointer;
 }
-@media only screen and (max-width: 729px) {
-  nav ul.menu li.menu-item-80 {
+@media only screen and (max-width: 45.563em) {
+  nav ul.menu li:first-child {
     display: flex;
     align-items: center;
-    padding: 1em;
+    padding: 1rem;
     margin: 0;
   }
 }
-nav ul.menu li.menu-item-80::before {
+nav ul.menu li:first-child::before {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
-  padding: 0 0.5em 0 0;
+  padding: 0 0.5rem 0 0;
   content: "\f0c9";
-  font-size: 2em;
+  font-size: 2rem;
 }
-@media only screen and (max-width: 729px) {
-  nav ul.menu li.menu-item-74 {
-    margin-top: 1em;
+@media only screen and (max-width: 18.750em) {
+  nav ul.menu li:first-child::before {
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900;
+    color: white;
+    padding: 0;
+    content: "";
+    font-size: 0;
+  }
+}
+nav ul.menu li:last-child,
+nav ul.menu li:nth-child(2) {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+  cursor: pointer;
+}
+@media only screen and (min-width: 45.625em) and (max-width: 59.938em), only screen and (min-width: 60em) {
+  nav ul.menu li:last-child,
+  nav ul.menu li:nth-child(2) {
+    display: none;
+    padding: 0 0.5rem;
+    align-items: center;
+  }
+}
+nav ul.menu li:last-child:before,
+nav ul.menu li:nth-child(2):before {
+  font-size: 2rem;
+}
+@media only screen and (min-width: 45.625em) and (max-width: 59.938em), only screen and (min-width: 60em) {
+  nav ul.menu li:last-child:before,
+  nav ul.menu li:nth-child(2):before {
+    font-size: 1rem;
+  }
+}
+nav ul.menu li:nth-child(2):before {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: white;
+  padding: 0 0.5rem 0 0;
+  content: "\f015";
+}
+@media only screen and (min-width: 60em), only screen and (min-width: 45.625em) and (max-width: 59.938em), only screen and (max-width: 25em) {
+  nav ul.menu li:nth-child(2):before {
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900;
+    color: white;
+    padding: 0;
+    content: "";
+  }
+}
+nav ul.menu li:last-child:before {
+  font-family: "Font Awesome 5 Free", serif;
+  font-weight: 900;
+  color: white;
+  padding: 0 0.5rem 0 0;
+  content: "\f2b9";
+}
+@media only screen and (min-width: 60em), only screen and (min-width: 45.625em) and (max-width: 59.938em), only screen and (max-width: 25em) {
+  nav ul.menu li:last-child:before {
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900;
+    color: white;
+    padding: 0;
+    content: "";
+  }
+}
+@media only screen and (max-width: 45.563em) {
+  nav ul.menu li:nth-child(3) {
+    margin-top: 1rem;
   }
 }
 nav ul.menu li.hamburger-menu-button-close::before {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
-  padding: 0 0.5em 0 0;
+  padding: 0 0.5rem 0 0;
   content: "\f00d";
 }
 nav ul.hamburger-menu {
@@ -112,29 +181,46 @@ nav ul.hamburger-menu {
 nav ul.hamburger-menu li {
   display: block;
   margin: 0;
-  padding-left: 1em;
-  line-height: 2em;
+  padding-left: 1rem;
+  line-height: 2rem;
+}
+nav ul.hamburger-menu li:last-child,
+nav ul.hamburger-menu li:nth-child(2) {
+  display: none;
+}
+nav ul.hamburger-menu li .sub-menu li {
+  display: flex;
+  margin: 0;
+  padding-left: 1rem;
+  line-height: 2rem;
+}
+nav ul.hamburger-menu li .sub-menu li:nth-child(2) {
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+nav ul.hamburger-menu li .sub-menu li:last-child {
+  padding: 0 1rem;
 }
 nav ul.sub-menu {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: stretch;
-  line-height: 1.5em;
+  display: none;
+  line-height: 1.5;
   background-color: #232222;
-  opacity: 0;
-  z-index: -1;
+  opacity: 1;
+  z-index: 1;
   position: absolute;
   top: 0;
   right: 0;
   height: 100vh;
+  width: max-content;
+  min-width: 15rem;
   padding: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   box-shadow: -10px 2px 10px 0 rgba(0, 0, 0, 0.6);
 }
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 45.563em) {
   nav ul.sub-menu {
     width: 100%;
     max-width: 100%;
@@ -144,43 +230,52 @@ nav ul.sub-menu {
 nav ul.sub-menu li {
   margin: 0;
   display: block;
-  line-height: 2em;
-  padding: 0 1em;
+  line-height: 2;
+  padding: 0 1rem;
   width: 100%;
   max-width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 45.563em) {
   nav ul.sub-menu li {
     display: none;
-    margin: 1em;
+    margin: 1rem;
   }
 }
-nav ul.sub-menu li.menu-item-62,
-nav ul.sub-menu li.menu-item-73,
-nav ul.sub-menu li.menu-item-69 {
-  margin-top: 1em;
-}
-nav ul.sub-menu li.menu-item-84,
-nav ul.sub-menu li.menu-item-83,
-nav ul.sub-menu li.menu-item-82 {
+nav ul.sub-menu li:first-child {
   cursor: pointer;
   background-color: #191919;
   display: flex;
   align-items: center;
-  padding: 1em;
+  padding: 1rem;
+  line-height: 1;
   z-index: 5;
 }
-nav ul.sub-menu li.menu-item-84::before,
-nav ul.sub-menu li.menu-item-83::before,
-nav ul.sub-menu li.menu-item-82::before {
-  font-size: 2em;
+nav ul.sub-menu li:first-child::before {
+  font-size: 2rem;
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
-  padding: 0 0.3em 0 0;
+  padding: 0 0.5rem 0 0;
   content: "\f00d";
+}
+nav ul.sub-menu li:nth-child(2) {
+  margin-top: 1rem;
+  padding: 0 1rem;
+  display: block;
+}
+nav ul.sub-menu li:nth-child(2):before {
+  content: "";
+  padding: 0;
+}
+nav ul.sub-menu li:last-child {
+  display: block;
+  padding: 0 1rem;
+}
+nav ul.sub-menu li:last-child:before {
+  content: "";
+  padding: 0;
 }
 /*# sourceMappingURL=nav.css.map */

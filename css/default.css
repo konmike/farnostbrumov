@@ -1,7 +1,5 @@
 .hidden,
-.list-hidden,
-#menu-item-56,
-#menu-item-78 {
+.list-hidden {
   display: none;
 }
 .wpcf7-textarea {
@@ -11,12 +9,17 @@
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
-  padding: 0 0 0 0.4em;
+  padding: 0 0 0 0.4rem;
   content: "\f53d";
 }
 html,
 body {
   transition: all 0.5s;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
 }
 body {
   margin: 0;
@@ -40,7 +43,7 @@ a.map::after {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
-  padding: 0 0 0 0.4em;
+  padding: 0 0 0 0.4rem;
   content: "\f3c5";
 }
 a.tel {
@@ -51,7 +54,7 @@ a.tel::after {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
-  padding: 0 0 0 0.4em;
+  padding: 0 0 0 0.4rem;
   content: "\f095";
 }
 a.email {
@@ -62,14 +65,14 @@ a.email::after {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
-  padding: 0 0 0 0.4em;
+  padding: 0 0 0 0.4rem;
   content: "\f0e0";
 }
 a.external::after {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
-  padding: 0 0 0 0.4em;
+  padding: 0 0 0 0.4rem;
   content: "\f35d";
 }
 a.today {
@@ -79,42 +82,42 @@ a.today::before {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: red;
-  padding: 0 0.3em 0 0;
+  padding: 0 0.3rem 0 0;
   content: "\f0da";
 }
 a.today::after {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: red;
-  padding: 0 0 0 0.3em;
+  padding: 0 0 0 0.3rem;
   content: "\f0d9";
 }
 a.smooth-scroll-down::before {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
-  padding: 0 0.4em 0 0;
+  padding: 0 0.4rem 0 0;
   content: "\f0d7";
 }
 a.smooth-scroll-down::after {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
-  padding: 0 0 0 0.4em;
+  padding: 0 0 0 0.4rem;
   content: "\f0d7";
 }
 a.smooth-scroll-up::before {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
-  padding: 0 0.4em 0 0;
+  padding: 0 0.4rem 0 0;
   content: "\f0d8";
 }
 a.smooth-scroll-up::after {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
-  padding: 0 0 0 0.4em;
+  padding: 0 0 0 0.4rem;
   content: "\f0d8";
 }
 ul {
@@ -128,7 +131,7 @@ ul li.menu-item-has-children::after {
   font-family: "Font Awesome 5 Free", serif;
   font-weight: 900;
   color: white;
-  padding: 0 0 0 0.4em;
+  padding: 0 0 0 0.4rem;
   content: "\f0d7";
 }
 footer {
@@ -141,12 +144,12 @@ footer {
   align-content: stretch;
 }
 footer div {
-  margin: 0 2em;
+  margin: 0 2rem;
 }
 footer div dl dt {
-  margin: 0.5em 0;
+  margin: 0.5rem 0;
 }
 footer div dl dd {
-  margin-bottom: 0.3em;
+  margin-bottom: 0.3rem;
 }
 /*# sourceMappingURL=default.css.map */

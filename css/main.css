@@ -13,7 +13,7 @@ article.intro {
   max-width: 100%;
   height: 100vh;
 }
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 45.563em) {
   article.intro {
     background-image: none;
     background-color: white;
@@ -22,18 +22,18 @@ article.intro {
 }
 article.intro header {
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 2rem;
   text-align: center;
 }
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 45.563em) {
   article.intro header {
     background-image: url("http://farbru.cekuj.net/wp-content/uploads/2019/02/fullkostel.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-color: #191919;
-    font-size: 1.5em;
-    margin-top: 1em;
+    font-size: 1.5rem;
+    margin-top: 1rem;
   }
 }
 article.intro footer {
@@ -47,9 +47,9 @@ article.intro footer {
   text-transform: uppercase;
   font-weight: 800;
   font-family: Helvetica, Arial, sans-serif;
-  padding: 1em 0;
+  padding: 1rem 0;
 }
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 45.563em) {
   article.intro footer {
     display: flex;
     flex-flow: column wrap;
@@ -70,18 +70,18 @@ article.intro footer {
   }
 }
 article.intro footer ul {
-  padding: 0 1.5em;
-  margin: 0 1.5em;
-  border-right: 0.1em white solid;
-  border-left: 0.1em white solid;
-  line-height: 1.7em;
+  padding: 0 1.5rem;
+  margin: 0 1.5rem;
+  border-right: 0.1rem white solid;
+  border-left: 0.1rem white solid;
+  line-height: 1.7;
 }
-@media only screen and (max-width: 729px) {
+@media only screen and (max-width: 45.563em) {
   article.intro footer ul {
-    padding: 1em 0;
-    margin: 1em 0;
-    border-top: 0.09em #191919 solid;
-    border-bottom: 0.09em #191919 solid;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    border-top: 0.09rem #191919 solid;
+    border-bottom: 0.09rem #191919 solid;
     border-right: none;
     border-left: none;
   }
@@ -95,7 +95,6 @@ article.contact a {
   color: #000;
 }
 article.news {
-  background-color: rgba(230, 230, 230, 0.9);
   height: 100vh;
   display: flex;
   flex-direction: row;
@@ -104,18 +103,40 @@ article.news {
   align-items: stretch;
   align-content: flex-start;
 }
+@media only screen and (max-width: 45.563em), only screen and (max-width: 25em) {
+  article.news {
+    height: auto;
+  }
+}
 article.news section:first-child {
+  background-color: rgba(230, 230, 230, 0.9);
   max-width: 70%;
   width: 70%;
+  height: 100vh;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: center;
   align-content: stretch;
 }
+@media only screen and (max-width: 45.563em), only screen and (max-width: 25em) {
+  article.news section:first-child {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
 article.news section:last-child {
+  background-color: #f0f0f0;
   max-width: 30%;
   width: 30%;
+}
+@media only screen and (max-width: 45.563em), only screen and (max-width: 25em) {
+  article.news section:last-child {
+    max-width: 100%;
+    width: 100%;
+    padding-bottom: 2rem;
+  }
 }
 article.news section h3,
 article.news section h4 {
@@ -125,11 +146,11 @@ article.news section h3 {
   text-align: center;
 }
 article.news section ul {
-  line-height: 1.5em;
+  line-height: 1.5;
+  padding: 0 1rem;
 }
 article.news section div {
-  border-left: 0.05em solid black;
-  padding-left: 1em;
+  padding-left: 1rem;
 }
 article.contact {
   height: auto;
@@ -138,7 +159,7 @@ article.contact {
   flex-flow: column wrap;
   justify-content: center;
   align-items: stretch;
-  align-content: flex-start;
+  align-content: center;
 }
 article.contact h2 {
   text-align: center;
@@ -151,7 +172,7 @@ article.contact section {
   justify-content: center;
   align-items: stretch;
   align-content: stretch;
-  margin: 0.5em 0 0.5em 0;
+  margin: 0.5rem 0 0.5rem 0;
 }
 article.contact section div {
   display: flex;
@@ -159,23 +180,28 @@ article.contact section div {
   justify-content: flex-start;
   align-items: center;
   align-content: stretch;
-  margin: 0 2em;
+  margin: 0 2rem;
+}
+@media only screen and (max-width: 25em) {
+  article.contact section div {
+    margin: 0;
+  }
 }
 article.contact section div h3 {
   margin-bottom: 0;
 }
 article.contact section div h4 {
-  margin-top: 0.8em;
+  margin-top: 0.8rem;
 }
 article.contact section div img {
-  border-radius: 5em;
+  border-radius: 5rem;
 }
 article.contact section div dl {
   display: flex;
   font-weight: 800;
 }
 article.contact section div dl dd {
-  margin-left: 1em;
+  margin-left: 1rem;
 }
 article.contact section div dl dd a.tel::after {
   font-style: normal;
@@ -184,152 +210,4 @@ article.contact section div dl dd a.tel::after {
 article.contact section div.wpcf7-display-none {
   display: none;
 }
-/*
-nav{
-  max-width: 100%;
-
-  &.menu-fixed{
-    .display-flex-row(nowrap);
-
-    @media @mobile{
-      .position-fixed(0,0);
-      background-color: #191919;
-      width: 100%;
-      max-width: 100%;
-      z-index: 1;
-    }
-  }
-
-  &.menu-scroll{
-    .position-fixed(0,0);
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    background-color: #191919;
-    color: white;
-    z-index: 9999;
-
-    @media @mobile{
-      display: none;
-    }
-  }
-
-  & ul{
-    .display-flex-row(nowrap);
-    margin: 0;
-    padding: 1em 0;
-    font-weight: 800;
-    font-family: Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    max-width: 100%;
-
-    &.hamburger-menu{
-      .display-flex-column(flex-start);
-      height: 100vh;
-      max-height: 100vh;
-      width: 100%;
-      max-width: 100%;
-      padding: 3em 1em;
-      background-color: #232222;
-
-      & li{
-        display: block;
-        margin: 0;
-        padding-left: 1em;
-        line-height: 2em;
-      }
-    }
-
-    @media @mobile{
-      margin: 1em 0;
-    }
-
-    &.submenu{
-      .display-flex-column(flex-start,flex-start);
-      line-height: 1.5em;
-      background-color: #191919;
-      opacity: 0;
-      z-index: -1;
-      .position-absolute-tr(0,0);
-      height: 100vh;
-      padding: 3em 1em;
-      margin: 0;
-      box-sizing: border-box;
-      box-shadow: -10px 2px 10px 0 rgba(0,0,0,.6);
-
-      @media @mobile{
-        width: 100%;
-        max-width: 100%;
-        background-color: #232222;
-
-        & li{
-          display: block;
-
-          &.close {
-            .position-absolute-tl(0, 0);
-            cursor: pointer;
-            background-color: #191919;
-
-            &::after{
-              font-size: 2em;
-            }
-          }
-        }
-      }
-    }
-
-    & li{
-      margin: 0 .5em;
-      display: block;
-
-      &.close{
-        .position-absolute-tl(.5em,0);
-        cursor: pointer;
-
-        &:hover{
-          color: red;
-
-          &::after{
-            .font-awesome(red, 0, "\f101");
-          }
-        }
-
-        &::after{
-          font-size: 1.5em;
-          .font-awesome(white, 0, "\f00d");
-        }
-      }
-
-      @media @mobile{
-        display: none;
-        margin: 1em;
-      }
-
-      &.hamburger-menu-button, &.hamburger-menu-button-close{
-        display: none;
-        width: 100%;
-        max-width: 100%;
-        line-height: normal;
-        background-color: #191919;
-
-        @media @mobile{
-          display: block;
-          padding: 1em;
-
-          &::after{
-            .font-awesome(white, 0, "\f0c9");
-            font-size: 2em;
-          }
-        }
-      }
-
-      &.hamburger-menu-button-close{
-          &::after{
-            .font-awesome(white, 0, "\f00d");
-          }
-      }
-    }
-  }
-} */
 /*# sourceMappingURL=main.css.map */

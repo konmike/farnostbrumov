@@ -16,16 +16,6 @@
             <dd class="account">190786736/0300</dd>
         </dl>
     </div>
-
-    <div>
-        <h4>Užitečné odkazy</h4>
-        <ul>
-            <li><a href="" title="" class="external">Odkaz</a></li>
-            <li><a href="" title="" class="external">Odkaz</a></li>
-            <li><a href="" title="" class="external">Odkaz</a></li>
-            <li><a href="" title="" class="external">Odkaz</a></li>
-        </ul>
-    </div>
 </footer>
 
 <?php wp_footer(); ?>
