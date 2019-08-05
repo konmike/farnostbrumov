@@ -1,0 +1,81 @@
+.section{
+  width: 100%;
+  max-width: 100%;
+}
+
+.section--custom-page .section__title{
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgba(0,0,0,0.8);
+  width: 100%;
+  height: min-content;
+  margin: 0;
+  padding: 0.5rem 0;
+  grid-area: header;
+}
+
+.section--home-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  background-image: url("@{img}/2019/02/fullkostel.jpg");
+  background-color: #191919;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media @mobile{
+    background-image: none;
+    background-color: #fff;
+    justify-content: space-between;
+  }
+}
+
+.section--news{
+  height: 100vh;
+}
+.section--news,
+.section--mass,
+.section--parish-news,
+.section--parish-monthly,
+.section--text{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(230, 230, 230, 0.9);
+
+  @media @tablet,@mobile{
+    height: auto;
+    flex-direction: column;
+  }
+}
+
+.section--contact{
+  height: auto;
+  background-color: rgba(230, 230, 230, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section--custom-page-mala-schola{
+
+}
+.section--custom-page{
+  display: grid;
+  grid-template-areas: "header header" "nav content";
+  grid-template-columns: 1fr 2fr;
+  @media @tablet,@mobile{
+    grid-template-areas: "header" "nav" "content";
+    grid-template-columns: 1fr;
+  }
+}
+.section--custom-page .wrapper--article{
+  grid-area: content;
+  padding: 0;
+}

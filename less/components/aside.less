@@ -1,0 +1,29 @@
+.aside--invitation{
+  height: 100vh;
+  width: 30%;
+  @media @tablet,@mobile{
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    background-color: rgb(230, 230, 230);
+    border-top: 1px solid rgb(200, 200, 200);
+    display: flex;
+    flex-direction: column;
+    align-items: center;;
+  }
+}
+.aside--invitation .aside__title{
+  @media @tablet,@mobile{
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
+
+.section--mass .aside--invitation,
+.section--parish-news .aside--invitation,
+.section--parish-monthly .aside--invitation,
+.section--text .aside--invitation{
+  @media @tablet, @mobile{
+    display: none;
+  }
+}

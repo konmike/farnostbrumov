@@ -1,0 +1,118 @@
+.footer--home-page{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  font-weight: 800;
+  font-family: Helvetica, Arial, sans-serif;
+
+  @media @mobile{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+  }
+}
+
+.footer__link{
+  transition: all 0.5s;
+  color: #fff;
+  @media @mobile{
+    color: #000;
+  }
+}
+.footer__link--go-to-contact,
+.footer__link--go-to-news{
+  &:hover:before,
+  &:hover:after{
+    color: #f00;
+    transform: rotate(360deg);
+  }
+  &::before{
+    display: inline-block;
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900;
+    color: #fff;
+    padding: 0 0.4rem 0 0;
+    content: "\f0d7";
+    transition: all 0.3s;
+    @media @mobile{
+      color: #000;
+    }
+  }
+  &::after{
+    display: inline-block;
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900;
+    color: #fff;
+    padding: 0 0 0 0.4rem;
+    content: "\f0d7";
+    transition: all 0.3s;
+    @media @mobile{
+      color: #000;
+    }
+  }
+}
+
+.footer--bottom{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  color: white;
+  background-color: #191919;
+}
+.footer--bottom .footer__link{
+  color: #fff;
+  font-style: italic;
+}
+.footer__link--tel,
+.footer__link--map,
+.footer__link--email{
+  color: #fff;
+  font-style: italic;
+}
+.footer__link--map{
+  &::after{
+    font-style: normal;
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900;
+    color: #fff;
+    padding: 0 0 0 0.4rem;
+    content: "\f3c5";
+  }
+}
+.footer__link--tel{
+  &::after{
+    font-style: normal;
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900;
+    color: #fff;
+    padding: 0 0 0 0.4rem;
+    content: "\f095";
+  }
+}
+.footer__link--email{
+  &::after{
+    font-style: normal;
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900;
+    color: #fff;
+    padding: 0 0 0 0.4rem;
+    content: "\f0e0";
+  }
+}
+.footer__link--account{
+  font-style: normal;
+  &::after{
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900;
+    color: white;
+    padding: 0 0 0 0.4rem;
+    content: "\f53d";
+  }
+}

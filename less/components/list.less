@@ -1,0 +1,146 @@
+.list--home-page{
+  padding: 0 1.5rem;
+  margin: 0 1.5rem;
+  border-right: 0.1rem #fff solid;
+  border-left: 0.1rem #fff solid;
+  line-height: 1.7;
+
+  @media @mobile{
+    padding: 1rem 0;
+    margin: 1rem 0;
+    border-top: 0.09rem #191919 solid;
+    border-bottom: 0.09rem #191919 solid;
+    border-right: none;
+    border-left: none;
+  }
+}
+.list--home-page .list__link{
+  color: #fff;
+
+  @media @mobile{
+    color: #000;
+  }
+}
+
+.list--news{
+  font-family: Helvetica, Arial, Calibri;
+  line-height: 2rem;
+  max-width: 80%;
+  padding: 0 1rem;
+}
+.list--mass{
+  font-family: Helvetica, Arial, Calibri;
+  line-height: 2rem;
+  max-width: 70%;
+}
+
+.list--invitation .list__item{
+  border-left: 0.2rem solid #424242;
+  padding: 0 0.5rem;
+  margin: 1rem 0;
+
+  @media @tablet,@mobile{
+    border-left: 0;
+  }
+}
+.list--invitation .list__link{
+  color: #424242;
+}
+.list--invitation h4{
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.list--contacts{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+
+  @media @tablet,@mobile{
+    flex-direction: column;
+  }
+}
+.list--contacts .list__item{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.5rem 2rem 0 2rem;
+  @media @tablet,@mobile{
+    margin: 1rem 0;
+  }
+}
+.list--contacts .img--contact{
+  border-radius: 5rem;
+}
+.list--contacts h3,
+.list--contacts h4{
+  margin-bottom: 0;
+}
+.list--contacts h4{
+  margin-top: 0.8rem;
+}
+.list--contacts .list__item dl{
+  display: flex;
+  font-weight: 800;
+}
+.list--contacts .list__item dl dd{
+  margin-left: 1rem;
+}
+.list--contacts .list__link--tel{
+  color: #000;
+  font-style: italic;
+}
+.list__link--today{
+  &:hover:before,
+  &:hover:after{
+    color: #f00;
+    transform: scale(0, 1.5);
+  }
+  &::before{
+    display: inline-block;
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900;
+    color: #f00;
+    padding: 0 0.3rem 0 0;
+    content: "\f0da";
+    transition: all 0.3s;
+  }
+  &::after{
+    display: inline-block;
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900;
+    color: #f00;
+    padding: 0 0 0 0.3rem;
+    content: "\f0d9";
+    transition: all 0.3s;
+  }
+}
+.list__link--tel{
+  &::after{
+    font-style: normal;
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900;
+    color: #000;
+    padding: 0 0 0 0.4rem;
+    content: "\f095";
+  }
+}
+
+.list--news-pdf,
+.list--parish-monthly{
+  line-height: 2rem;
+  font-family: Helvetica, calibri;
+  margin: 0 0 2rem 0;
+}
+.list--news-pdf a,
+.list--parish-monthly a{
+  color: #000;
+  text-decoration: underline;
+  text-decoration-color: #424242;
+  transition: all 0.5s;
+  &:hover{
+    color: #f00;
+  }
+}

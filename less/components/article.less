@@ -1,0 +1,122 @@
+.article{
+
+}
+.article__title{
+  @media @tablet,@mobile{
+    text-align: center;
+  }
+}
+.article--news{
+  width: 70%;
+  max-width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media @tablet,@mobile{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+.article--mass,
+.article--parish-news,
+.article--parish-monthly,
+.article--text{
+  width: 70%;
+  max-width: 70%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5rem;
+
+  @media @tablet, @mobile{
+    width: auto;
+    max-width: 100%;
+    padding: 0 2rem;
+  }
+}
+.article--text{
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+.section--custom-page .article--text{
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  grid-area: content;
+}
+.article--text h4{
+  margin: 0;
+}
+.article--text p{
+  width: 85%;
+  max-width: 90%;
+  text-indent: 1rem;
+  @media @tablet,@mobile{
+    padding: 0;
+    width: auto;
+    max-width: 100%;
+  }
+}
+.article--mass .article__title,
+.article--parish-news .article__title,
+.article--parish-monthly .article__title{
+  font-size: 1.7rem;
+}
+.article--mass h2,
+.article--mass h3,
+.article--mass h4{
+  margin: 0;
+}
+
+.article--post{
+  font-family: Helvetica, Arial, Calibri;
+  width: 90%;
+  padding: 1rem 0;
+  border-bottom: 1px solid #bdbdbd;
+  @media @tablet, @mobile{
+    width: auto;
+    max-width: 100%;
+    padding: 1rem 1rem;
+  }
+}
+.article--post:first-child{
+  margin-top: 1rem;
+}
+.article--post:last-child{
+  border-bottom: 0;
+  margin-bottom: 2rem;
+}
+.article--post h3{
+  margin-top: 0;
+}
+.article--post p{
+  line-height: 1.5rem;
+  margin: 0;
+  text-indent: 1rem;
+  @media @tablet,@mobile{
+    width: auto;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+}
+.article--post p:last-child{
+  padding-bottom: 1rem;
+}
+.article--post .article__signature{
+  font-style: italic;
+}
+.article--post-sticky h3{
+  &::after{
+    content: 'Důležité';
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-left: 1rem;
+    padding: 0.3rem 0.2rem 0.1rem 0.2rem;
+    color: #f00;
+    background-color: #000;
+  }
+}

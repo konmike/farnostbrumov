@@ -15,4 +15,6 @@
 </head>
 
 <body>
+<!--
 <img class="hidden" alt="preload" src="http://farbru.cekuj.net/wp-content/uploads/2019/02/fullkostel.jpg" />
+-->
